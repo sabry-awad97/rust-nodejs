@@ -1,0 +1,22 @@
+# Package metadata
+[package]
+name = "math"              # Name of the package
+version = "0.1.0"          # Version number
+description = "Math"       # Brief description of the package
+license = "MIT"            # License type for the package
+edition = "2021"           # Rust edition used in the package
+exclude = ["index.node"]   # Exclude the "index.node" file from the package
+
+# Rust library configuration
+[lib]
+crate-type = ["cdylib"]    # Compile the crate as a dynamic library
+path = "src_rust/lib.rs"   # Path to the lib file
+
+# External dependencies
+[dependencies]
+
+
+[dependencies.neon]
+version = "0.10.1"         # Dependency on the "neon" crate (version 0.10.1)
+default-features = false   # Disable default features of the "neon" crate
+features = ["napi-6"]      # Enable the "napi-6" feature of the "neon" crate
